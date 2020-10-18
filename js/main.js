@@ -1,26 +1,36 @@
-"use strict"
+"use strict";
+const tracks = document.querySelector(".js-trackUser");
+const attempts = document.querySelector(".js-attemptsUser");
+const btnPoof = document.querySelector(".js-btnProof");
+const introNumber = document.querySelector(".js-numberUser");
+const numberRamdon = getRandomNumber(100);
+let counterclick = 0;
 
-const introNumber = document.querySelector (".numberUser");
-const btnPoof = document.querySelector(".btnProof");
-const attemptsNum = document.querySelector (".attempts");
+// action
+function getRandomNumber(max) {
+  return Math.ceil(Math.random() * max);
+}
+console.log(numberRamdon);
 
-function listenProof (event) {
-  btnPoof = event.currentTarget;
-  attemptsNum.value = btnPoof.click;
-  const truckToUser = document.querySelector(".trackUser");
-  if (introNumber === getRandomNumber) {
-    truckToUser.innerHTML = "Has ganado campeona!!!"
-    
-  } else if(introNumber < getRandomNumber){
-    truckToUser.innerHTML = "Demasiado bajo"
-    
-  } else if (introNumber > getRandomNumber){
-    truckToUser.innerHTML = "Demasiado alto"
+// paint
+
+function counterBtn() {
+  counterclick++;
+  attempts.innerHTML = "Número de intentos: ";
+  attempts.innerHTML += counterclick;
+}
+btnPoof.addEventListener("click", counterBtn);
+
+function checkNumberRandom() {
+  let numberValue = parseInt(introNumber.value);
+  if ((numberValue = numberRamdon)) {
+    tracks.innerHTML = "Has ganado campeona!!!";
+  } else if (numberValue < numberRamdon) {
+    tracks.innerHTML = "Demasiado bajo";
+  } else if (numberValue > numberRamdon) {
+    tracks.innerHTML = "Demasiado alto";
+  } else if (numberValue < 0 || numberValue >= 100) {
+    tracks.innerHTML = "El número debe estar entre 1 y 100";
   }
 }
-function getRandomNumber(max) {
-  return Math.ceil(Math.random()* max);
-}
-
-btnPoof.addEventListener("click", listenProof);
-console.log(introNumber.value);
+checkNumberRandom();

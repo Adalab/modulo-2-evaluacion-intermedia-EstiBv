@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Módulo 2 - Ejercicio de evaluación intermedia</title>
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
   <main role="main">
-    <h1 class="titleGame">Adivina el número</h1> 
+    <h1 class="titleGame">Adivina el número</h1>
     <form action="" class="formGame">
-    <div class="js-intoProof">
-      <label for="numerUser" class="introNumber">Introduce aquí tu número:</label>
-      <input type="number" name="" id="numerUser" class="numberUser"
-      required min="0" max="100">
-      <button class="btnProof"> Prueba</button>
-    </div>
-    <div>
-      <label for="trackUser"></label >
-      <input placeholder = "Pista: Escribe el número y dale a Prueba" type="text" name="" id="trackUser" class= "trackUser">
-
-      <label for="attempts"></label>
-      <input type="text" name="" id="attempts" class="attempts" placeholder = "Número de intentos: 0">
-    </div>
+        <label for="numerUser" class="introNumber">Introduce aquí tu número:</label>
+        <input type="text" name="numerUser" id="numerUser" class="numberUser js-numberUser">
+        <label for="button"></label>
+        <input type="button" id="button" class="btnProof js-btnProof" name= "prueba" value="Prueba">
+        <p class="trackUser js-trackUser"> Pista: Escribe el número y dale a Prueba</p>
+        <p class="attempts js-attemptsUser">Número de intentos: 0</p>   
     </form>
-
   </main>
   <script src="/js/main.js"></script>
 </body>
+
 </html>
