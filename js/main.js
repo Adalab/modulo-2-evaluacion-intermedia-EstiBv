@@ -19,7 +19,7 @@ function counterBtn() {
 }
 function checkNumberRandom() {
   let numberValue = parseInt(introNumber.value);
-  if (numberValue < 0 && numberValue > 100) {
+  if (numberValue < 0 || numberValue > 100) {
     tracks.innerHTML = "El número debe estar entre 1 y 100";
   } else if (numberValue === numberRamdon) {
     tracks.innerHTML = "Has ganado campeona!!!";
